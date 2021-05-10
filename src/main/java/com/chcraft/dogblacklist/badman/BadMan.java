@@ -19,6 +19,11 @@ public class BadMan {
 	public BadMan() {
 	}
 
+	public BadMan(String name, String phone) {
+		this.name = name;
+		this.phone = phone;
+	}
+
 	public BadMan(int id, String name, String phone) {
 		this.id = id;
 		this.name = name;

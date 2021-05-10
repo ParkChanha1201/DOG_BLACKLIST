@@ -8,6 +8,11 @@ public class BadManDTO {
 	public BadManDTO() {
 	}
 
+	public BadManDTO(String name, String phone) {
+		this.name = name;
+		this.phone = phone;
+	}
+
 	public BadManDTO(int id, String name, String phone) {
 		this.id = id;
 		this.name = name;

@@ -28,13 +28,13 @@ class BadManRepositoryTest {
 		badMan.setPhone("01012341234");
 
 		int insertBefore = (int)badManRepository.count();
-		badManRepository.save(badMan);
+		badMan = badManRepository.save(badMan);
 		int insertAfter = (int)badManRepository.count();
 
 		assertEquals(insertBefore + 1, insertAfter);
 
 		//delete test
-		Optional<BadMan> oBadMan = badManRepository.findByName(badMan.getName());
+		Optional<BadMan> oBadMan = badManRepository.findById(badMan.getId());
 		assertEquals(true, oBadMan.isPresent());
 
 		badManRepository.deleteById(oBadMan.get().getId());
@@ -48,9 +48,7 @@ class BadManRepositoryTest {
 		BadMan badMan = new BadMan();
 		badMan.setName("홍길동");
 		badMan.setPhone("01012341234");
-		badManRepository.save(badMan);
-
-		badMan = badManRepository.findByName(badMan.getName()).get();
+		badMan = badManRepository.save(badMan);
 
 		badMan.setName("고길동");
 		badMan.setPhone("15882222");
