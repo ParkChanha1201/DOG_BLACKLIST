@@ -55,9 +55,15 @@ public class BadMan {
 		BadMan other = (BadMan) obj;
 		if (id != other.id)
 			return false;
-		if (!name.equals(other.name))
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
 			return false;
-		if (!phone.equals(other.phone))
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
 			return false;
 		return true;
 	}

@@ -4,8 +4,9 @@ import java.util.List;
 
 public interface BadManService {
 	List<BadManDTO> getAll();
-	List<BadManDTO> searchAllByName();
-	BadManDTO searchByPhone(String phone);
+	List<BadManDTO> searchAllByName(String name);
+	List<BadManDTO> searchAllByPhone(String phone);
+	BadManDTO getById(int id);
 
 	BadManDTO insert(BadManDTO dto);
 	BadManDTO update(BadManDTO dto);
