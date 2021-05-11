@@ -118,8 +118,8 @@ public class BadManServiceTest {
 		assertEquals(null, deleted);
 
 		BadManDTO badman2 = new BadManDTO();
-		badman.setName("삭제되기위하여태어남");
-		badman.setPhone("01043214321");
+		badman2.setName("삭제되기위하여태어남");
+		badman2.setPhone("01043214321");
 
 		badman2 = badManService.insert(badman2);
 
