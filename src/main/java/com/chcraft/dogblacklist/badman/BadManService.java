@@ -6,6 +6,7 @@ public interface BadManService {
 	List<BadManDTO> getAll();
 	List<BadManDTO> searchAllByName(String name);
 	List<BadManDTO> searchAllByPhone(String phone);
+	List<BadManDTO> searchAllByCondition(String name, String phone);
 	BadManDTO getById(int id);
 
 	BadManDTO insert(BadManDTO dto);

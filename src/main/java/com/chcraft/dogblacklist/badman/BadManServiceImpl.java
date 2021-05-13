@@ -81,6 +81,29 @@ public class BadManServiceImpl implements BadManService, Convertable<BadMan, Bad
 	}
 
 	@Override
+	public List<BadManDTO> searchAllByCondition(String name, String phone) {
+		List<BadManDTO> badManList = new ArrayList<>();
+		List<BadMan> nameMatch = new ArrayList<>();
+		List<BadMan> phoneMatch = new ArrayList<>();
+
+		if(!name.equals(""))
+			nameMatch.addAll(badManRepository.findAllByName(name));
+
+		if(!phone.equals(""))
+			phoneMatch.addAll(badManRepository.findAllByPhone(phone));
+
+		if(nameMatch.size() == 0) {
+			badManList = convertEntityList(phoneMatch);
+		} else if(phoneMatch.size() == 0) {
+			badManList = convertEntityList(nameMatch);
+		} else {
+
+		}
+
+		return badManList;
+	}
+
+	@Override
 	public BadManDTO getById(int id) {
 		Optional<BadMan> oBadMan = badManRepository.findById(id);
 
